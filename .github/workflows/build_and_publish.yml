@@ -4,18 +4,19 @@ on:
     branches:
       - main
 jobs:
-  buil-docker-image:
+  build-docker-image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build the Docker image
-        run: ./build.sh
-#                    docker run ghcr.io/einspunktnull/schmierschiss:latest
-#                    docker push ghcr.io/einspunktnull/hello-docker-gcr-demo:latest
-#            - name: Login to GitHub Container Registry
-#                uses: docker/login-action@v1
-#                with:
-#                    registry: ghcr.io
-#                    username: ${{ github.actor }}
-#                    password: ${{ secrets.GITHUB_TOKEN }}
+        #        run: ./build.sh
+        run: |
+          docker build . --tag ghcr.io/einspunktnull/schmierschiss:latest
+      - name: Push to Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+        run: docker push ghcr.io/einspunktnull/schmierschiss:latest
