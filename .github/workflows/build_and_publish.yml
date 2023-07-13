@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build-docker-image:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
