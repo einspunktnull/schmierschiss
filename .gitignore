@@ -1,2 +1,11 @@
-.idea
+# IDEs and editors
+.idea/
 
+# Node
+/node_modules
+
+# Compiled output
+/dist
+
+# Miscellaneous
+/.angular/cache

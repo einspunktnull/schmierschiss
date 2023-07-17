@@ -1,0 +1,81 @@
+<form [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Density of Resin in kg/m³</mat-label>
+        <input matInput formControlName="densityOfEpoxy" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('densityOfEpoxy')?.hasError('required')">Desity is required</mat-error>
+        <mat-error *ngIf="form.get('densityOfEpoxy')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Ratio Resin/Hardener</mat-label>
+        <input matInput formControlName="ratioResinHardener" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('ratioResinHardener')?.hasError('required')">Ratio is required</mat-error>
+        <mat-error *ngIf="form.get('ratioResinHardener')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Color due in %</mat-label>
+        <input matInput formControlName="percentageColor" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('percentageColor')?.hasError('required')">Due is required</mat-error>
+        <mat-error *ngIf="form.get('percentageColor')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Mix in g</mat-label>
+        <input matInput formControlName="massMix" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('massMix')?.hasError('required')">Mix is required</mat-error>
+        <mat-error *ngIf="form.get('massMix')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Resin in g</mat-label>
+        <input matInput formControlName="massResin" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('massResin')?.hasError('required')">Resin is required</mat-error>
+        <mat-error *ngIf="form.get('massResin')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Hardener in g</mat-label>
+        <input matInput formControlName="massHardener" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('massHardener')?.hasError('required')">Hardener is required</mat-error>
+        <mat-error *ngIf="form.get('massHardener')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Color in g</mat-label>
+        <input matInput formControlName="massColor" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('massColor')?.hasError('required')">Color is required</mat-error>
+        <mat-error *ngIf="form.get('massColor')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Mix in ml</mat-label>
+        <input matInput formControlName="volMlMix" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('volMlMix')?.hasError('required')">Mix is required</mat-error>
+        <mat-error *ngIf="form.get('volMlMix')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Mix in mm³</mat-label>
+        <input matInput formControlName="volMm3Mix" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('volMm3Mix')?.hasError('required')">Mix is required</mat-error>
+        <mat-error *ngIf="form.get('volMm3Mix')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Cube Edge length in mm</mat-label>
+        <input matInput formControlName="cubeEdgeLength" (input)="onInputChange( $event)">
+        <mat-error *ngIf="form.get('cubeEdgeLength')?.hasError('required')">Mix is required</mat-error>
+        <mat-error *ngIf="form.get('cubeEdgeLength')?.hasError('pattern')">Invalid format</mat-error>
+    </mat-form-field>
+
+</form>
+

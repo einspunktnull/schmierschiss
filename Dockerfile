@@ -1,3 +1,3 @@
 FROM nginx
 
-COPY ./www /usr/share/nginx/html
+COPY ./dist/schmierschiss /usr/share/nginx/html
