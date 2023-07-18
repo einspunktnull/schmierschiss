@@ -20,8 +20,6 @@ jobs:
                 run: npm ci
             -   name: Build the angular app
                 run: npm run build:ci
-#            -   name: Test
-#                run: npm run test:ci
             -   name: Build the Docker image
                 run: |
                     VERSION=$(scripts/read_version_from_package_json.sh .)
@@ -33,7 +31,4 @@ jobs:
                     username: ${{ github.actor }}
                     password: ${{ secrets.GITHUB_TOKEN }}
             -   name: Push The Docker image to the GitHub Container Registry
-                run: |
-                    ./build_docker_image.sh
-                    VERSION=$(scripts/read_version_from_package_json.sh .)
-                    docker push ghcr.io/einspunktnull/schmierschiss --all-tags
+                run: docker push ghcr.io/einspunktnull/schmierschiss --all-tags
