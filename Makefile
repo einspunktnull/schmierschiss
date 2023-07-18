@@ -4,8 +4,7 @@ SHELL:=/bin/bash
 
 IMAGE_BASE_NAME=schmierschiss
 VERSION=$(cat VERSION)
-IMAGE_NAME="$IMAGE_BASE_NAME:$VERSION"
-IMAGE_NAME_LATEST="$IMAGE_BASE_NAME:latest"
+THIS_DIR=$(realpath ./)
 UID=$(id -u)
 
 all: FORCE build docker-run
@@ -16,7 +15,8 @@ ng-build: FORCE
 	ng build
 
 ng-build: FORCE
-	docker run -u $$UID --rm -v ./:/app trion/ng-cli ng build
+		echo ${THIS_DIR}
+		docker run -u $$UID --rm -v ${THIS_DIR}:/app trion/ng-cli ng build
 
 ng-serve: FORCE
 	ng serve
