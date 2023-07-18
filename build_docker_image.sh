@@ -1,8 +1,0 @@
-#!/bin/bash
-
-IMAGE_BASE_NAME=schmierschiss
-VERSION=$(cat VERSION)
-IMAGE_NAME="$IMAGE_BASE_NAME:$VERSION"
-IMAGE_NAME_LATEST="$IMAGE_BASE_NAME:latest"
-
-docker build -t "$IMAGE_NAME" -t "$IMAGE_NAME_LATEST" .

@@ -3,7 +3,6 @@ SHELL:=/bin/bash
 
 
 IMAGE_BASE_NAME=schmierschiss
-VERSION=$(cat VERSION)
 THIS_DIR=$(realpath ./)
 UID=$(id -u)
 
@@ -25,7 +24,7 @@ ng-serve-open: FORCE
 	ng serve --open
 
 docker-build: FORCE
-	./build_docker_image.sh
+	./scripts/build_docker_image.sh
 
 docker-run: FORCE
 	docker run --rm -p 80:80 ${IMAGE_BASE_NAME}
