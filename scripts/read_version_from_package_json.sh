@@ -15,7 +15,7 @@ read_version_from_package_json() {
     # Check if package.json exists
     if [ -f "$file" ]; then
         # Read the content of package.json into a variable
-        local package_json=$(<package.json)
+        local package_json=$(<"$file")
 
         # Extract the version field using pattern matching
         local version=$(grep -o '"version": *"[^"]*"' <<<"$package_json" | grep -o '"[^"]*"$' | tr -d '"')
