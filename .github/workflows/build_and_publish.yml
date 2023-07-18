@@ -14,7 +14,7 @@ jobs:
                 run: VERSION=$(cat VERSION)
             -   name: Build the angular app
                 run: |
-                    docker run --rm -v ./:/app trion/ng-cli ng build
+                    docker run --rm -v $PWD:/app trion/ng-cli ng build
             -   name: Build the Docker image
                 run: |
                     VERSION=$(cat VERSION)
