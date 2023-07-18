@@ -1,6 +1,6 @@
 #!/bin/bash
 
-THIS_SCRIPT="${BASH_SOURCE[0]}"
+THIS_SCRIPT=$(realpath "${BASH_SOURCE[0]}")
 THIS_SCRIPT_DIR="$(dirname "$THIS_SCRIPT")"
 
 source "$THIS_SCRIPT_DIR"/read_version_from_package_json.sh
