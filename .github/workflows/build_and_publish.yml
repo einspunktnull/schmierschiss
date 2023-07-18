@@ -4,7 +4,7 @@ on:
         branches:
             - main
 jobs:
-    build-and-deploy-docker-iamge:
+    build-and-deploy-docker-image:
         permissions: write-all
         runs-on: ubuntu-latest
         steps:
