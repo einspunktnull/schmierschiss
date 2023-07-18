@@ -10,8 +10,6 @@ jobs:
         steps:
             -   name: Checkout code
                 uses: actions/checkout@v2
-            -   name: Get Version
-                run: VERSION=$(cat VERSION)
             -   name: Use Node
                 uses: actions/setup-node@v1
                 with:
